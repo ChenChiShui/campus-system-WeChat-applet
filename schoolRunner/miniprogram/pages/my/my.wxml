@@ -1,0 +1,27 @@
+<view class="page">
+  <!-- 头像信息 -->
+  <view class="info">
+    <view class="avatar">
+      <image src="{{userInfo.avatarUrl}}" mode="widthFix" style="height: inherit;width: inherit"></image>
+    </view>
+    <view class="info_text">
+      <view>{{userInfo.nickName}}</view>
+    </view>
+    <view class="line"></view>
+  </view>
+
+  <!-- 功能块 -->
+  <view class="piece"> 
+    <view wx:for="{{piece}}" wx:for-item="item" wx:key="index" class="branch">
+      <navigator url="{{item.url}}" class="piece_layout" hover-class="none">
+        <view>{{item.name}}</view>
+        <view class="right">></view>
+      </navigator>
+    </view>  
+  </view>
+
+  <!-- 获取用户信息按钮 -->
+  <button bindtap="getUserInfomation" class="btn" wx:if="{{show}}">
+    点击获取用户信息
+  </button>
+</view>

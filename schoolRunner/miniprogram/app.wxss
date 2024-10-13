@@ -1,0 +1,10 @@
+.panel {
+  position: relative;
+}
+.tag {
+  position: absolute;
+  top: 50%;
+  right: 50rpx;
+  z-index: 99;
+  transform: translateY(-50%);
+}

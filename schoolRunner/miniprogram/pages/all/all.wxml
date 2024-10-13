@@ -1,0 +1,39 @@
+<view
+  wx:for="{{new}}"
+  wx:for-item="item"
+  wx:key="{{item._id}}"
+  bindtap="detail"
+  data-id="{{item._id}}"
+  data-type="{{item.type}}"
+  class="panel"
+>
+  <!-- 自定义内容区域，背景颜色根据 tag 类型动态生成 -->
+  <view class="custom-content" style="background-color: {{item.backgroundColor}}">
+    <!-- 图片展示 -->
+    <image class="custom-image" src="{{item.image}}" mode="aspectFill" />
+
+    <!-- 信息展示 -->
+    <view class="custom-details">
+      <!-- 职位标题 -->
+      <text class="custom-title">{{item.title}}</text>
+
+      <!-- 薪资信息 -->
+      <text class="custom-salary">薪资: {{item.salary}} </text>
+
+      <!-- 发布日期 -->
+      <text class="custom-date">发布日期: {{item.date}}</text>
+    </view>
+
+    <!-- 标签展示 -->
+    <view class="custom-tags">
+      <van-tag
+        custom-class="custom-tag"
+        color="{{item.tagColor}}"
+        text-color="#fff"
+        plain="{{false}}"
+      >
+        {{item.tagName}}
+      </van-tag>
+    </view>
+  </view>
+</view>

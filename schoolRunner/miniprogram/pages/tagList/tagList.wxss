@@ -1,0 +1,28 @@
+.tag{
+  position: relative;
+  top: -150rpx;
+  left: 0rpx;
+}
+.custom-content {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+}
+
+.custom-image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  border-radius: 8rpx;  /* 圆角图片，按需调整 */
+}
+
+.custom-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-salary {
+  color: #ff4c4c;
+  font-size: 26rpx;
+  font-weight: bold;
+}

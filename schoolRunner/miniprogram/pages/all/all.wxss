@@ -1,0 +1,72 @@
+/* 自定义内容区域（使用 flex 布局） */
+/* 自定义内容区域 */
+.custom-content {
+  padding: 20rpx;     /* 给内容区域添加内边距 */
+  border-radius: 16rpx; /* 如果需要圆角效果 */
+  margin-bottom: 20rpx; /* 每个面板之间的间距 */
+  box-shadow: 0 3rpx 15rpx rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  display: flex;
+  align-items: center;
+}
+/* 详情区域，包含标题、薪资、日期等 */
+.custom-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1; /* 让其占满剩余空间 */
+}
+
+/* 职位标题样式 */
+.custom-title {
+  font-size: 34rpx;       /* 较大的字体尺寸 */
+  font-weight: bold;      /* 加粗，突出标题 */
+  color: #333;            /* 深色字体 */
+  margin-bottom: 10rpx;   /* 与其他元素的间距 */
+}
+
+/* 薪资信息样式 */
+.custom-salary {
+  font-size: 28rpx;       /* 稍大的字体尺寸 */
+  color: #ff4c4c;         /* 醒目的红色字体 */
+  font-weight: 500;       /* 轻微加粗 */
+  margin-bottom: 10rpx;   /* 与其他元素的间距 */
+  display: block;         /* 强制块级显示 */
+  box-sizing: border-box; /* 确保 padding 和 border 包含在宽高内 */
+}
+
+/* 发布日期样式 */
+.custom-date {
+  font-size: 24rpx;       /* 较小的字体尺寸 */
+  color: #888;            /* 灰色字体 */
+  font-weight: normal;    /* 正常字体权重 */
+  margin-top: 10rpx;
+}
+/* 图片样式 */
+.custom-image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 8rpx;  /* 圆角 */
+  margin-right: 20rpx;  /* 图片和内容之间的间距 */
+  object-fit: cover;    /* 确保图片适合容器 */
+}
+
+/* 详情区域，包含标题、薪资、日期等 */
+.custom-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 标签容器 */
+.custom-tags {
+  margin-left: auto; /* 将标签推到右侧 */
+  display: flex;
+  align-items: center;
+}
+
+/* 自定义 van-tag 的样式 */
+.custom-tag {
+  padding: 8rpx 16rpx;    /* 增加内边距，确保标签内容有足够的空间 */
+  font-size: 12rpx;       /* 设置字体大小 */
+  border-radius: 12rpx;   /* 设置适中的圆角 */
+}

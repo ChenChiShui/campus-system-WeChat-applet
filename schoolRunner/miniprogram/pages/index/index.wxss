@@ -1,0 +1,75 @@
+.notice {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+.input {
+  padding-top: 41px;
+}
+
+.swiperBox {
+  width: 100%;
+  text-align: center;
+}
+
+.swiper {
+  height: 175px;
+}
+
+.listImg {
+  width: 10rpx;
+}
+
+.list {
+  margin: 25rpx 0;
+  text-align: center;
+}
+
+.fireHeader {
+  color: red;
+}
+
+.listBox {
+  background: linear-gradient(to right, rgb(255, 246, 224), rgb(237, 210, 141));
+  width: 95%;
+  margin: 20rpx auto;
+  border-radius: 40px;
+}
+
+.shareBox {
+  position: fixed;
+  right: 0;
+  top: 60%;
+  z-index: 9999;
+  width: 100rpx;
+}
+
+.kfBtn {
+  font-size: 14px;
+}
+
+/* 自定义内容区域样式 */
+.custom-content {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+}
+
+.custom-image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  border-radius: 8rpx;
+}
+
+.custom-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-salary {
+  color: #ff4c4c;
+  font-size: 26rpx;
+  font-weight: bold;
+}

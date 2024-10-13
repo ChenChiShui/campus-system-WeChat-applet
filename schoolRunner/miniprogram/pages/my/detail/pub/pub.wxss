@@ -1,0 +1,71 @@
+.pub-container {
+  padding-top: 50rpx;
+  background: #fbfae1;
+  height: 100vh;
+}
+
+textarea {
+  margin: 20px auto;
+  border: 1px solid #eaeaea;
+  width: 80%;
+  padding: 20rpx;
+  border-radius: 40rpx;
+}
+
+.context {
+  font-size: 26rpx;
+}
+
+.btn {
+  position: absolute;
+  left: calc(50% - 30px);
+}
+
+.van-button {
+  border-radius: 10rpx !important;
+}
+
+.van-field__input {
+  padding-left: 20rpx !important;
+}
+
+.van-cell {
+  background-color: #fbfae1 !important;
+}
+
+.van-button--primary {
+  background: #64a36f !important;
+  color: #fbfae1 !important;
+  height: 80rpx !important;
+  width: 150rpx !important;
+  border: none !important;
+}
+
+.image-preview {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.image-wrapper {
+  position: relative;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.image-wrapper image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 2px;
+}
