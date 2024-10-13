@@ -10,7 +10,6 @@ Page({
     info: {},       // 职位详情
     time: '',       // 时间
     show: false,    // 弹窗显示控制
-    contactDialogShow: false,  // 联系方式对话框显示控制
     title: [],      // 简历的标题列表
     id: '',         // 职位ID
     images: []      // 用于存储图片的URL
@@ -66,6 +65,14 @@ Page({
 
   // 用户报名
   join() {
+    wx.vibrateLong({
+      success: () => {
+        console.log('手机长时间震动成功');
+      },
+      fail: (err) => {
+        console.error('手机震动失败', err);
+      }
+    });
     jobList.get().then((res) => {
       if (res.data.length === 0) {
         wx.showToast({
@@ -83,22 +90,16 @@ Page({
     });
   },
 
-  // 显示联系对话框
-  showContactDialog() {
-    this.setData({
-      contactDialogShow: true
-    });
-  },
-
-  // 关闭联系对话框
-  closeContactDialog() {
-    this.setData({
-      contactDialogShow: false
-    });
-  },
-
   // 拨打电话
   makePhoneCall() {
+    wx.vibrateLong({
+      success: () => {
+        console.log('手机长时间震动成功');
+      },
+      fail: (err) => {
+        console.error('手机震动失败', err);
+      }
+    });
     const phone = this.data.info.phone;
     if (phone) {
       wx.makePhoneCall({
@@ -116,15 +117,11 @@ Page({
         icon: 'none'
       });
     }
-
-    // 关闭对话框
-    this.setData({
-      contactDialogShow: false
-    });
   },
 
   // 点击确认选择简历
   onConfirm(e) {
+
     let { openid } = app.globalData;
     let { index, value } = e.detail;
     let date = new Date().getTime();
@@ -200,6 +197,16 @@ Page({
   // 图片点击事件，预览图片
   handleImagePreview(e) {
     const currentUrl = e.currentTarget.dataset.url; // 当前点击图片的URL
+wx.vibrateShort({
+success: () => {
+console.log('手机震动成功');
+},
+fail: (err) => {
+console.error('手机震动失败', err);
+}
+});
+
+    
     wx.previewImage({
       current: currentUrl,    // 当前显示图片的http链接
       urls: this.data.images  // 需要预览的图片http链接列表

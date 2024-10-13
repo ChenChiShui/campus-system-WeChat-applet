@@ -1,1 +1,40 @@
-/* miniprogram/pages/my/detail/deliver/deliver.wxss */
+.page {
+  background-color: #f4f4f4;
+  padding-bottom: 30rpx;
+}
+
+/* 列表项的样式 */
+.cell-item {
+  background-color: white;
+  border-radius: 12rpx;
+  margin: 20rpx 20rpx;
+  padding: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 标题部分的样式 */
+.cell-item .van-cell__title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 描述部分的样式 */
+.cell-item .van-cell__label {
+  font-size: 28rpx;
+  color: #888;
+  margin-top: 10rpx;
+}
+
+/* 日期部分的样式 */
+.cell-item .van-cell__value {
+  font-size: 28rpx;
+  color: #07c160;
+  text-align: right;
+  margin-left: auto;
+}
+
+/* 列表项之间的间距 */
+.van-cell-group {
+  margin-top: 30rpx;
+}

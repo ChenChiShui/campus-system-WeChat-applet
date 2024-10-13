@@ -64,6 +64,6 @@
 
   <!-- 在线咨询按钮 -->
   <view class="shareBox">
-    <button type="primary" open-type="contact" class="kfBtn">在线咨询</button>
+    <button type="primary" open-type="contact" class="kfBtn" style="position: relative; left: 0rpx; top: -1rpx">在线咨询</button>
   </view>
 </view>

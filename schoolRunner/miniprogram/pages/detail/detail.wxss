@@ -1,8 +1,8 @@
-/* 整体背景颜色修改为淡黄色 */
+/* 整体背景颜色 */
 .detail-container {
-  background-color: #fffbe6; /* 淡黄色背景 */
-  padding-bottom: 160rpx; /* 留出底部按钮空间 */
-  min-height: 100vh; /* 保证内容撑满视图 */
+  background-color: #f4f4f4; /* 淡灰色背景 */
+  padding-bottom: 160rpx;
+  min-height: 100vh;
 }
 
 /* 头部样式 */
@@ -11,14 +11,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 30rpx;
-  border-bottom: 1rpx solid #e6e6e6;
-  background-color: #dae2ad; /* 头部背景为白色 */
+  background: linear-gradient(135deg, #a8e063, #56ab2f); /* 渐变背景 */
+  border-radius: 12rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1); /* 圆角和阴影 */
+  margin: 20rpx 30rpx;
 }
 
 .head-title {
-  font-size: 40rpx;
+  font-size: 44rpx;
   font-weight: bold;
-  color: #333;
+  color: #fff;
   max-width: 600rpx;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -26,31 +28,75 @@
 }
 
 .head-time {
-  font-size: 26rpx;
-  color: #999;
+  font-size: 28rpx;
+  color: #f0f0f0;
   margin-top: 10rpx;
 }
 
 .head-right {
-  font-size: 36rpx;
+  font-size: 40rpx;
   color: #ff6f61;
   font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
 }
 
-/* 联系信息样式 */
-.call, .address {
+/* 信息块样式 */
+.info-card {
+  background-color: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.05); /* 卡片阴影 */
   margin: 20rpx 30rpx;
-  font-size: 28rpx;
-  color: rgb(51, 51, 51);
+  padding: 20rpx;
+}
+
+.call, .address {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;  /* 保持原来的字体大小 */
+  color: #444;       /* 调整为稍微深一点的灰色 */
+  background-color: #f9f9f9;  /* 修改背景为淡灰色 */
+  margin-bottom: 20rpx;
+  padding: 20rpx 60rpx;  /* 增大左右 padding */
+  border-radius: 12rpx;   /* 添加轻微圆角 */
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.05);  /* 添加轻微阴影 */
+}
+
+.call .info-icon, .address .info-icon {
+  width: 40rpx;     /* 保持图标宽度 */
+  height: 40rpx;    /* 保持图标高度 */
+  margin-right: 20rpx;  /* 保持图标与文字的间距 */
+}
+
+.call-text, .address-text {
+  flex-grow: 1;     /* 文本占据剩余空间 */
+  font-size: 30rpx; /* 保持字体大小 */
+  color: #333;      /* 调整为默认文字颜色 */
+}
+.info-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+/* 职位描述块 */
+.context-card {
+  background-color: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.05); /* 卡片阴影 */
+  margin: 40rpx 30rpx;
+  padding: 40rpx;
+  flex-grow: 1;  
 }
 
 .context {
   line-height: 68rpx;
-  margin: 20rpx 30rpx;
-  font-size: 28rpx;
+  font-size: 30rpx;
   color: #666;
   word-wrap: break-word;
   white-space: pre-line;
+  margin: 40rpx 30rpx;
 }
 
 /* 图片展示区域 */
@@ -76,62 +122,64 @@
   box-shadow: 0 6rpx 14rpx rgba(0, 0, 0, 0.15); /* 悬浮时阴影加深 */
 }
 
-/* 我要报名按钮样式 */
-.btn-primary {
+/* 三个按钮区域，固定在页面底部 */
+.button-group {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(135deg, #ff9966, #ff5e62); /* 渐变橙红 */
-  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx 30rpx;
+  background-color: #fff;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* 按钮基础样式 */
+button {
+  flex: 1;
   font-size: 36rpx;
-  padding: 20rpx 0;
+  padding: 20rpx;
   text-align: center;
+  margin: 0 10rpx;
+  border-radius: 30rpx;
   border: none;
-  border-radius: 0;
-  box-shadow: 0 -4rpx 12rpx rgba(0, 0, 0, 0.1); /* 阴影效果 */
+  color: #fff;
   transition: all 0.3s ease;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+button:last-child {
+  margin-right: 0;
+}
+
+/* 我要报名按钮样式 */
+.btn-primary {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
 }
 
 .btn-primary:active {
-  background: linear-gradient(135deg, #ff5e62, #ff3d4f); /* 点击时渐变色变化 */
-  box-shadow: 0 -2rpx 8rpx rgba(0, 0, 0, 0.1); /* 点击时阴影变化 */
+  background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.15);
 }
 
-/* 我要联系按钮样式 */
+/* 在线联系按钮样式 */
 .btn-secondary {
-  position: fixed;
-  bottom: 100rpx;
-  left: 0;
-  width: 100%;
-  background-color: #4caf50; /* 使用清新的绿色 */
-  color: #fff;
-  font-size: 36rpx;
-  padding: 20rpx 0;
-  text-align: center;
-  border: none;
-  border-radius: 0;
-  box-shadow: 0 -4rpx 12rpx rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 
 .btn-secondary:active {
-  background-color: #388e3c; /* 点击时颜色变化 */
-  box-shadow: 0 -2rpx 8rpx rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #c2e9fb 0%, #a1c4fd 100%);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.15);
 }
 
-/* van-dialog 和 van-popup 样式优化 */
-.van-dialog__header {
-  font-size: 36rpx;
-  font-weight: bold;
+/* 拨打电话按钮样式 */
+.btn-tertiary {
+  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
 }
 
-.van-dialog__content {
-  font-size: 28rpx;
-  color: #333;
-}
-
-.van-popup {
-  background-color: #fff;
-  border-radius: 16rpx 16rpx 0 0; /* 圆角弹窗 */
+.btn-tertiary:active {
+  background: linear-gradient(135deg, #8fd3f4 0%, #84fab0 100%);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.15);
 }

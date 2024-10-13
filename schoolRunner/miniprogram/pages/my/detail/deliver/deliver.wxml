@@ -1,3 +1,12 @@
-<van-cell-group>
-  <van-cell wx:for="{{list}}" title="{{item.title}}" value="{{item.jobDocList[0].date}}" wx:key="key" />
-</van-cell-group>
+<view class="page">
+  <van-cell-group>
+    <van-cell wx:for="{{list}}" 
+              wx:for-item="item" 
+              wx:key="index" 
+              title="{{item.title}}" 
+              label="{{item.jobDocList[0].description}}" 
+              value="{{item.jobDocList[0].date}}" 
+              class="cell-item" 
+              border="{{false}}" />
+  </van-cell-group>
+</view>

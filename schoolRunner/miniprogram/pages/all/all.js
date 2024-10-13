@@ -41,12 +41,28 @@ Page({
     // 根据排序方法进行不同的排序逻辑
     if (sortMethod === 'tag') {
       // 按标签排序
+      wx.vibrateLong({
+        success: () => {
+          console.log('手机长时间震动成功');
+        },
+        fail: (err) => {
+          console.error('手机震动失败', err);
+        }
+      });
       sortedJobs = jobList.sort((a, b) => {
         const comparison = a.tagName.localeCompare(b.tagName);
         return sortOrder === 'asc' ? comparison : -comparison;
       });
     } else if (sortMethod === 'date') {
       // 按时间排序
+      wx.vibrateLong({
+        success: () => {
+          console.log('手机长时间震动成功');
+        },
+        fail: (err) => {
+          console.error('手机震动失败', err);
+        }
+      });
       sortedJobs = jobList.sort((a, b) => {
         const dateA = new Date(a.date).getTime();
         const dateB = new Date(b.date).getTime();
@@ -65,7 +81,7 @@ Page({
     });
 
     // 按照日期降序获取前10条数据
-    jobDetail.orderBy('date', 'desc').limit(10).get().then((res) => {
+    jobDetail.orderBy('date', 'desc').limit(100).get().then((res) => {
       if (res.data && res.data.length > 0) {
         const newData = res.data.map((element) => {
           return {
@@ -83,7 +99,7 @@ Page({
 
         this.setData({
           new: newData, // 直接覆盖当前数据
-          page: 10,     // 设置分页数为10
+          page: 100,     // 设置分页数为10
           loading: false
         });
 

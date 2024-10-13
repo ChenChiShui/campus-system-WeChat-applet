@@ -7,7 +7,7 @@
     </view>
     <view class="head-right">{{info.salary}}</view>
   </view>
-  
+
   <!-- 联系信息 -->
   <view class="call">联系手机：{{info.phone}}</view>
   <view class="address">联系地址：{{info.address}}</view>
@@ -20,36 +20,38 @@
     </block>
   </view>
 
-  <!-- 我要报名按钮 -->
-  <button class="btn-primary" type="primary" bindtap="join">我要报名</button>
+  <!-- 按钮组，固定在页面底部 -->
+  <view class="button-group">
   
-  <!-- 弹窗选择简历 -->
-  <van-popup show="{{show}}" bind:close="onCancel" position="bottom" custom-style="height: 50%;">
-    <van-picker
-      show-toolbar
-      title="选择简历"
-      bind:cancel="onCancel"
-      bind:confirm="onConfirm"
-      columns="{{title}}" 
-      default-index="{{0}}"
-      bind:change="onChange"
-    />
-  </van-popup>
+    <!-- 我要报名按钮 -->
+    <button class="btn-primary" type="primary" bindtap="join" style="position: relative; left: -41rpx; top: 0rpx">我要报名</button>
+<!-- 弹窗选择简历 -->
 
-  <!-- 我要联系按钮 -->
-  <button class="btn-secondary" type="primary" bindtap="showContactDialog">我要联系</button>
+<van-popup show="{{show}}" bind:close="onCancel" position="bottom" custom-style="height: 50%;">
 
-  <!-- 联系方式弹窗 -->
-  <van-dialog
-    show="{{contactDialogShow}}"
-    title="联系我们"
-    show-cancel-button
-    confirm-button-text="拨打电话"
-    cancel-button-text="取消"
-    bind:confirm="makePhoneCall"
-    bind:cancel="closeContactDialog"
-  >
-    <view>联系电话：{{info.phone}}</view>
-    <view>联系地址：{{info.address}}</view>
-  </van-dialog>
+<van-picker
+
+show-toolbar
+
+title="选择简历"
+
+bind:cancel="onCancel"
+
+bind:confirm="onConfirm"
+
+columns="{{title}}"
+
+default-index="{{0}}"
+
+bind:change="onChange"
+
+/>
+
+</van-popup>
+    <!-- 在线联系按钮 -->
+    <button class="btn-secondary" type="primary" open-type="contact" style="position: relative; left: -31rpx; top: -1rpx">在线联系</button>
+
+    <!-- 拨打电话按钮 -->
+    <button class="btn-tertiary" type="primary" bindtap="makePhoneCall" style="position: relative; left: -25rpx; top: 2rpx">拨打电话</button>
+  </view>
 </view>
