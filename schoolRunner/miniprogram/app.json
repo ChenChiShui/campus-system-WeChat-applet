@@ -10,7 +10,8 @@
     "pages/my/detail/uploadDoc/uploadDoc",
     "pages/search/search",
     "pages/my/detail/deliver/deliver",
-    "pages/my/detail/myPub/myPub"
+    "pages/my/detail/myPub/myPub",
+    "pages/statistics/statistics"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -45,5 +46,8 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "ec-canvas": "miniprogram_npm/ec-canvas/ec-canvas"
+  }
 }

@@ -1,0 +1,13 @@
+<view class="container">
+  <!-- 图表1：招聘信息与用户统计 -->
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec1 }}" style="width: 100%; height: 400px;"></ec-canvas>
+
+  <!-- 图表2：招聘信息按时间统计 -->
+  <ec-canvas id="mychart-dom-time" canvas-id="mychart-time" ec="{{ ec2 }}" style="width: 100%; height: 400px;"></ec-canvas>
+
+  <!-- 图表3：招聘信息按类别统计 -->
+  <ec-canvas id="mychart-dom-category" canvas-id="mychart-category" ec="{{ ec3 }}" style="width: 100%; height: 400px;"></ec-canvas>
+
+  <ec-canvas id="mychart-dom-resume" canvas-id="resume" ec="{{ec4}}" />
+<ec-canvas id="mychart-dom-popular-jobs" canvas-id="popular-jobs" ec="{{ec5}}" />
+</view>

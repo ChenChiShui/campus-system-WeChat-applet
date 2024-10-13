@@ -1,50 +1,36 @@
 const db = wx.cloud.database();
 const jobDetail = db.collection('jobDetail');
-const info = db.collection('info')
-const util = require('../utils/utils')
+const info = db.collection('info');
+const util = require('../utils/utils');
+
 Page({
-  data :{
-    swiper:[{
-      img:"../../images/swiper/swiper1.jpg"
-    },{
-      img:"../../images/swiper/swiper3.jpg"
-    }
-  ],
-    list:[{
-      img:"/images/icon/write.png",
-      text:"写作",
-      tag:"write"
-    },{
-      img:"/images/icon/teach.png",
-      text:"家教",
-      tag:'teach'
-    },{
-      img:"/images/icon/fastMail.png",
-      text:"快递分拣",
-      tag:"fastMail"
-    },{
-      img:"/images/icon/waiter.png",
-      text:"服务生",
-      tag:"waiter"
-    },{
-      img:"/images/icon/takeOut.png",
-      text:"送餐员",
-      tag:"takeOut"
-    },{
-      img:"/images/icon/invite.png",
-      text:"邀请",
-      tag:"invite"
-    }
-  ],
-    fire:[],
-    new:[],
+  data: {
+    swiper: [
+      { img: "../../images/swiper/swiper1.jpg" },
+      { img: "../../images/swiper/swiper3.jpg" }
+    ],
+    list: [
+      { img: "/images/icon/write.png", text: "写作", tag: "write" },
+      { img: "/images/icon/teach.png", text: "家教", tag: 'teach' },
+      { img: "/images/icon/fastMail.png", text: "快递分拣", tag: "fastMail" },
+      { img: "/images/icon/waiter.png", text: "服务生", tag: "waiter" },
+      { img: "/images/icon/takeOut.png", text: "送餐员", tag: "takeOut" },
+      { img: "/images/icon/invite.png", text: "统计", tag: "cnt" }
+    ],
+    fire: [],
+    new: [],
     activeNames: ['1'],
-    notice:"公告：北一2083大甩卖",
-    fireTime:''
+    notice: "公告：北一2083大甩卖",
+    fireTime: '',
+    jobCount: 0,   // 招聘信息总数
+    userCount: 0   // 用户总数
   },
-  onLoad(){
+
+  onLoad() {
     this.getjobDetail();
   },
+
+  // 获取招聘信息列表
   getjobDetail() {
     jobDetail.orderBy('date', 'desc').limit(7).get().then((res) => {
       let re = res.data;
@@ -62,48 +48,51 @@ Page({
       });
     });
   },
+
+  // 用于展开/收起折叠面板
   onChange(event) {
     this.setData({
       activeNames: event.detail
     });
   },
-  detail(e){
+
+  // 跳转到职位详情页
+  detail(e) {
     let id = e.currentTarget.dataset.id;
-    let type = e.currentTarget.dataset.type;
     wx.navigateTo({
       url: '../detail/detail?id=' + id,
-    })
+    });
   },
-  tagDetail(e){
+
+  // 处理分类点击事件
+  tagDetail(e) {
     let name = e.currentTarget.dataset.name;
-    
-    if(name === 'invite'){
-      wx.showToast({
-        title: '功能待完善',
-        icon: 'none'
-      })
-      // wx.navigateTo({
-      //   url: '../my/detail/invite/invite',
-      // })      
-    }else{
+
+    if (name === 'cnt') {
+      wx.navigateTo({
+        url: '../statistics/statistics',  // 跳转到统计页面
+      });
+    } else {
       wx.navigateTo({
         url: '../tagList/tagList?name=' + name,
-      })
+      });
     }
   },
-  search(){
+
+  // 跳转到搜索页面
+  search() {
     wx.navigateTo({
       url: '../search/search',
-    })
+    });
   },
-  onPullDownRefresh: function () {
-    wx.showNavigationBarLoading() //在标题栏中显示加载
-    this.getjobDetail();
-    //模拟加载
+
+  // 下拉刷新功能
+  onPullDownRefresh() {
+    wx.showNavigationBarLoading(); // 在标题栏中显示加载
+    this.getjobDetail(); // 重新拉取招聘信息
     setTimeout(function () {
-      // complete
-      wx.hideNavigationBarLoading() //完成停止加载
-      wx.stopPullDownRefresh() //停止下拉刷新
+      wx.hideNavigationBarLoading(); // 完成停止加载
+      wx.stopPullDownRefresh(); // 停止下拉刷新
     }, 1500);
   }
-})
+});

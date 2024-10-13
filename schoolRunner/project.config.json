@@ -34,7 +34,7 @@
   },
   "appid": "wx2763b4c004b67e21",
   "projectname": "schoolRunner",
-  "libVersion": "2.20.2",
+  "libVersion": "3.6.0",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
