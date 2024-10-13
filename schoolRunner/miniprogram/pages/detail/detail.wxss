@@ -1,79 +1,137 @@
+/* 整体背景颜色修改为淡黄色 */
 .detail-container {
-  background: #fbfae1;
-  height: 100vh;
+  background-color: #fffbe6; /* 淡黄色背景 */
+  padding-bottom: 160rpx; /* 留出底部按钮空间 */
+  min-height: 100vh; /* 保证内容撑满视图 */
 }
 
-.btn {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-.call, .address {
-  color: #64a36f;
-  margin: 20rpx 20rpx;
-  font-size: 24rpx;
-}
-
-.context {
-  line-height: 70rpx;
-  margin: 20rpx 20rpx;
-  word-wrap: break-word;
-}
-
+/* 头部样式 */
 .head {
-  display: grid;
-  grid-template-rows: 100rpx;
-  grid-template-columns: 80% 20%;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  border-bottom: 1rpx solid #e6f3de;
-  padding: 20rpx 30rpx;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+  background-color: #dae2ad; /* 头部背景为白色 */
 }
 
 .head-title {
-  font-size: 32rpx;
-  width: 500rpx;
-  word-wrap: break-word;
-  max-height: 100rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+  max-width: 600rpx;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .head-time {
   font-size: 26rpx;
-  color: #888;
+  color: #999;
   margin-top: 10rpx;
 }
 
 .head-right {
-  color: #ffe121;
+  font-size: 36rpx;
+  color: #ff6f61;
+  font-weight: bold;
 }
 
-/* 图片展示样式 */
+/* 联系信息样式 */
+.call, .address {
+  margin: 20rpx 30rpx;
+  font-size: 28rpx;
+  color: rgb(51, 51, 51);
+}
+
+.context {
+  line-height: 68rpx;
+  margin: 20rpx 30rpx;
+  font-size: 28rpx;
+  color: #666;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
+/* 图片展示区域 */
 .image-preview {
-  margin: 20rpx;
+  margin: 20rpx 30rpx;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .job-image {
-  width: 200rpx;
+  width: calc(33.33% - 10rpx);
   height: 200rpx;
-  margin-right: 10rpx;
   margin-bottom: 10rpx;
   object-fit: cover;
-  border-radius: 10rpx;
-  /* 调试边框 */
-  border: 1px solid red;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* 我要联系按钮的样式 */
-.btn-contact {
+
+.job-image:hover {
+  transform: scale(1.05); /* 悬浮时放大 */
+  box-shadow: 0 6rpx 14rpx rgba(0, 0, 0, 0.15); /* 悬浮时阴影加深 */
+}
+
+/* 我要报名按钮样式 */
+.btn-primary {
   position: fixed;
-  bottom: 100rpx;  /* 保证与我要报名按钮有一定间距 */
+  bottom: 0;
+  left: 0;
   width: 100%;
-  background-color: #ff6f61;
+  background: linear-gradient(135deg, #ff9966, #ff5e62); /* 渐变橙红 */
   color: #fff;
   font-size: 36rpx;
-  padding: 10rpx 0;
+  padding: 20rpx 0;
   text-align: center;
   border: none;
+  border-radius: 0;
+  box-shadow: 0 -4rpx 12rpx rgba(0, 0, 0, 0.1); /* 阴影效果 */
+  transition: all 0.3s ease;
+}
+
+.btn-primary:active {
+  background: linear-gradient(135deg, #ff5e62, #ff3d4f); /* 点击时渐变色变化 */
+  box-shadow: 0 -2rpx 8rpx rgba(0, 0, 0, 0.1); /* 点击时阴影变化 */
+}
+
+/* 我要联系按钮样式 */
+.btn-secondary {
+  position: fixed;
+  bottom: 100rpx;
+  left: 0;
+  width: 100%;
+  background-color: #4caf50; /* 使用清新的绿色 */
+  color: #fff;
+  font-size: 36rpx;
+  padding: 20rpx 0;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 -4rpx 12rpx rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:active {
+  background-color: #388e3c; /* 点击时颜色变化 */
+  box-shadow: 0 -2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+/* van-dialog 和 van-popup 样式优化 */
+.van-dialog__header {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.van-dialog__content {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.van-popup {
+  background-color: #fff;
+  border-radius: 16rpx 16rpx 0 0; /* 圆角弹窗 */
 }

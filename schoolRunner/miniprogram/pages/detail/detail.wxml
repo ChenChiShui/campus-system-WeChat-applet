@@ -21,21 +21,23 @@
   </view>
 
   <!-- 我要报名按钮 -->
-  <button class="btn" type="primary" bindtap="join">我要报名</button>
+  <button class="btn-primary" type="primary" bindtap="join">我要报名</button>
+  
   <!-- 弹窗选择简历 -->
-  <van-popup show="{{ show }}" bind:close="onCancel" position="bottom" custom-style="height: 50%;">
+  <van-popup show="{{show}}" bind:close="onCancel" position="bottom" custom-style="height: 50%;">
     <van-picker
       show-toolbar
       title="选择简历"
       bind:cancel="onCancel"
       bind:confirm="onConfirm"
-      columns="{{ title }}" 
+      columns="{{title}}" 
       default-index="{{0}}"
       bind:change="onChange"
     />
   </van-popup>
+
   <!-- 我要联系按钮 -->
-  <button class="btn-contact" type="primary" bindtap="showContactDialog">我要联系</button>
+  <button class="btn-secondary" type="primary" bindtap="showContactDialog">我要联系</button>
 
   <!-- 联系方式弹窗 -->
   <van-dialog
