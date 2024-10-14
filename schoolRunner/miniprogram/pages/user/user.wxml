@@ -1,0 +1,24 @@
+<view>
+  <!-- 显示所有用户的按钮 -->
+  <view style="margin: 20rpx auto; text-align: center;">
+    <button bindtap="showAllUsers" type="primary" class="show-users-btn">显示全部用户</button>
+  </view>
+
+  <!-- 用户信息列表 -->
+  <view wx:if="{{users.length > 0}}">
+    <block wx:for="{{users}}" wx:key="index">
+      <!-- 每个用户的卡片框 -->
+      <view class="user-card">
+        <!-- 使用 van-cell 显示用户头像、昵称和更新时间 -->
+        <van-cell title="{{item.nickName || '未命名用户'}}" label="上次更新时间：{{item.formattedUpdateTime}}">
+          <image class="avatar" src="{{item.avatarUrl}}" mode="aspectFill" slot="icon" />
+        </van-cell>
+      </view>
+    </block>
+  </view>
+
+  <!-- 如果没有用户数据，显示提示 -->
+  <view wx:else style="text-align: center; margin-top: 50rpx;">
+    <text>暂无用户信息，请点击按钮获取</text>
+  </view>
+</view>

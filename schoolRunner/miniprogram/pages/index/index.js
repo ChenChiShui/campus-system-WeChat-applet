@@ -12,9 +12,9 @@ Page({
     list: [
       { img: "/images/icon/write.png", text: "写作", tag: "write" },
       { img: "/images/icon/teach.png", text: "家教", tag: 'teach' },
-      { img: "/images/icon/fastMail.png", text: "快递分拣", tag: "fastMail" },
-      { img: "/images/icon/waiter.png", text: "服务生", tag: "waiter" },
-      { img: "/images/icon/takeOut.png", text: "送餐员", tag: "takeOut" },
+      { img: "/images/icon/fastMail.png", text: "修改用户信息", tag: "fastMail" },
+      { img: "/images/icon/waiter.png", text: "发布招聘", tag: "waiter" },
+      { img: "/images/icon/icon-user_info.png", text: "用户", tag: "takeOut" },
       { img: "/images/icon/invite.png", text: "统计", tag: "cnt" }
     ],
     fire: [],
@@ -72,7 +72,24 @@ Page({
       wx.navigateTo({
         url: '../statistics/statistics',  // 跳转到统计页面
       });
-    } else {
+    }
+    else if (name == 'fastMail') {
+      wx.navigateTo({
+        url: '../fixUser/fixUser',  // 跳转到统计页面
+      });
+    }
+    else if (name == 'takeOut') {
+      wx.navigateTo({
+        url: '../user/user',  // 跳转到统计页面
+      });
+    } 
+    else if (name == 'waiter')
+    {
+      wx.navigateTo({
+        url: '../my/detail/pub/pub',
+      });
+    }
+    else {
       wx.navigateTo({
         url: '../tagList/tagList?name=' + name,
       });

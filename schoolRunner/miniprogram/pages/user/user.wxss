@@ -1,0 +1,39 @@
+.show-users-btn {
+  padding: 20rpx 40rpx;
+  background: linear-gradient(45deg, #1aad19, #4caf50);
+  color: white;
+  border-radius: 30rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  box-shadow: 0 5rpx 10rpx rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* 按钮点击效果 */
+.show-users-btn:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+/* 用户卡片的样式 */
+.user-card {
+  background-color: #fff;
+  padding: 20rpx;
+  margin: 20rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  border: 1rpx solid #eaeaea;
+  transition: all 0.3s ease;
+}
+
+/* 鼠标悬浮卡片效果 */
+.user-card:hover {
+  box-shadow: 0 6rpx 16rpx rgba(0, 0, 0, 0.15);
+}
+
+/* 头像样式 */
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}

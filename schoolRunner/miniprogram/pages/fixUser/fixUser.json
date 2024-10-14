@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-field": "../../miniprogram_npm/weapp/dist/field/index",
+    "van-popup": "../../miniprogram_npm/weapp/dist/popup/index",
+    "van-picker": "../../miniprogram_npm/weapp/dist/picker/index"
+  }
+}

@@ -11,7 +11,9 @@
     "pages/search/search",
     "pages/my/detail/deliver/deliver",
     "pages/my/detail/myPub/myPub",
-    "pages/statistics/statistics"
+    "pages/statistics/statistics",
+    "pages/user/user",
+    "pages/fixUser/fixUser"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

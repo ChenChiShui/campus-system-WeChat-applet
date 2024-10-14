@@ -1,12 +1,11 @@
 const db = wx.cloud.database();
 const jobDetail = db.collection('jobDetail');
-
 Page({
   data: {
     show: false,
     title: '',
     phone: '',
-    address: '',
+    address: '', // 联系地址
     email: '',
     salary: '',
     tag: '',
@@ -15,7 +14,39 @@ Page({
     images: [], // 用于存储图片的临时路径
   },
 
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    wx.login({
+      success: (res) => {
+        if (res.code) {
+          // 可以通过 res.code 进行后端登录操作
+          console.log('登录成功，code:', res.code);
+        } else {
+          console.log('登录失败！' + res.errMsg);
+        }
+      }
+    });
+  },
+
+  // 选择地址（地图选点功能）
+  onChooseLocation() {
+    // 调用微信小程序地图选点 API
+    wx.chooseLocation({
+      success: (res) => {
+        console.log('选择的地址:', res);
+        // 设置返回的地址信息
+        this.setData({
+          address: res.address // 更新地址到页面
+        });
+      },
+      fail: (err) => {
+        console.error('选择地址失败:', err);
+        wx.showToast({
+          title: '选择地址失败',
+          icon: 'none'
+        });
+      }
+    });
+  },
 
   onTitle(e) {
     this.setData({
@@ -134,8 +165,8 @@ Page({
         break;
     }
 
-    // 上传图片并发布数据
-    this.uploadImages().then((uploadResults) => {
+     // 上传图片并发布数据
+     this.uploadImages().then((uploadResults) => {
       const imageUrls = uploadResults.map(res => res.fileID);
 
       jobDetail.add({
@@ -167,7 +198,6 @@ Page({
       });
     });
   },
-
   // 选择标签
   onConfirm(event) {
     const { value } = event.detail;
@@ -209,7 +239,60 @@ Page({
     let reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/g;
     return reg.test(email);
   },
-
+  // 获取用户手机号
+  getPhoneNumber(e) {
+    console.log('获取手机号事件:', e.detail);
+    
+    // 判断用户是否授权成功
+    if (e.detail.errMsg === "getPhoneNumber:ok") {
+      const { encryptedData, iv } = e.detail;
+      
+      // 调用云函数进行解密
+      wx.cloud.callFunction({
+        name: 'decryptPhoneNumber',
+        data: { encryptedData, iv },
+        success: (res) => {
+          console.log('解密后的手机号:', res.result.phoneNumber);
+          this.setData({
+            phone: res.result.phoneNumber // 设置解密后的手机号
+          });
+          wx.showToast({
+            title: '手机号获取成功',
+            icon: 'success'
+          });
+        },
+        fail: (err) => {
+          console.error('解密失败:', err);
+          wx.showToast({
+            title: '手机号解密失败',
+            icon: 'none'
+          });
+        }
+      });
+      
+    } else {
+      // 用户拒绝授权的情况
+      wx.showModal({
+        title: '提示',
+        content: '您未授权获取手机号，您可以手动输入或重新授权。',
+        confirmText: '重新授权',
+        cancelText: '手动输入',
+        success: (res) => {
+          if (res.confirm) {
+            console.log('用户点击重新授权');
+  
+            // 重新触发授权获取手机号的流程
+            // 你可以在这里再次调用 `open-type="getPhoneNumber"` 的按钮
+            
+          } else if (res.cancel) {
+            console.log('用户选择手动输入');
+            // 用户选择手动输入
+            // 你可以引导用户手动输入手机号
+          }
+        }
+      });
+    }
+  },
   // 删除图片
   deleteImage(e) {
     const index = e.currentTarget.dataset.index;

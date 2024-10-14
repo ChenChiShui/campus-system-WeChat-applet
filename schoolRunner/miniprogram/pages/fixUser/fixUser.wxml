@@ -1,0 +1,57 @@
+<view class="container">
+  <view class="avatar-section">
+    <image class="avatar" src="{{avatarUrl}}" mode="aspectFill"></image>
+    <button bindtap="changeAvatar">更换头像</button>
+  </view>
+
+  <view class="form-section">
+    <van-field label="昵称" value="{{nickName}}" bindinput="onNickNameInput" />
+    <van-field label="性别" value="{{genderLabel}}" is-link bindtap="onGenderSelect" />
+    <van-field label="城市" value="{{city}}" is-link bindtap="onCitySelect" />
+    <van-field label="省份" value="{{province}}" is-link bindtap="onProvinceSelect" />
+    <van-field label="国家" value="{{country}}" is-link bindtap="onCountrySelect" />
+
+    <button class="save-btn" bindtap="onSave">保存</button>
+  </view>
+
+  <!-- 性别选择弹出框 -->
+  <van-popup show="{{showGenderPopup}}" position="bottom" bind:close="onPopupClose">
+    <van-picker
+      show-toolbar
+      title="选择性别"
+      columns="{{genderColumns}}"
+      bind:confirm="onGenderConfirm"
+    />
+  </van-popup>
+
+  <!-- 城市选择弹出框 -->
+  <van-popup show="{{showCityPopup}}" position="bottom" bind:close="onPopupClose">
+    <van-picker
+      show-toolbar
+      title="选择城市"
+      columns="{{cityColumns}}"
+      bind:confirm="onCityConfirm"
+    />
+  </van-popup>
+
+  <!-- 省份选择弹出框 -->
+  <van-popup show="{{showProvincePopup}}" position="bottom" bind:close="onPopupClose">
+    <van-picker
+      show-toolbar
+      title="选择省份"
+      columns="{{provinceColumns}}"
+      bind:confirm="onProvinceConfirm"
+    />
+  </van-popup>
+
+  <!-- 国家选择弹出框 -->
+  <van-popup show="{{showCountryPopup}}" position="bottom" bind:close="onPopupClose">
+    <van-picker
+      show-toolbar
+      title="选择国家"
+      columns="{{countryColumns}}"
+      bind:confirm="onCountryConfirm"
+    />
+  </van-popup>
+
+</view>

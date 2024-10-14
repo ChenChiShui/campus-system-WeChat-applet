@@ -1,12 +1,30 @@
 <view class="page">
   <van-cell-group>
-    <van-cell wx:for="{{list}}" 
-              wx:for-item="item" 
-              wx:key="index" 
-              title="{{item.title}}" 
-              label="{{item.jobDocList[0].description}}" 
-              value="{{item.jobDocList[0].date}}" 
-              class="cell-item" 
-              border="{{false}}" />
+    <block wx:for="{{list}}" wx:key="index">
+      <!-- 使用 use-slot 并且使用默认 slot -->
+      <van-cell
+        title="{{item.title}}"  
+        label="{{item.jobDocList[0].description}}" 
+        value="{{item.jobDocList[0].date}}"
+        class="cell-item"
+        border="{{false}}"
+        use-slot 
+      >
+        <!-- 插槽内容，使用 slot="default" -->
+        <view slot="default">
+          <!-- 简历是否已被查看 -->
+          <view class="resume-status">
+            {{item.jobDocList[0].isViewed ? '简历已查看' : '简历未查看'}}
+          </view>
+
+          <!-- 跳转到招聘页面按钮 -->
+          <view class="button-wrapper">
+            <button class="job-detail-button" bindtap="goToJobPage" data-id="{{item._id}}">
+              查看招聘详情
+            </button>
+          </view>
+        </view>
+      </van-cell>
+    </block>
   </van-cell-group>
 </view>

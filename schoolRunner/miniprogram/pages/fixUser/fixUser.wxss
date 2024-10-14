@@ -1,0 +1,32 @@
+.container {
+  padding: 20rpx;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.avatar {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100rpx;
+  margin-bottom: 20rpx;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.save-btn {
+  margin-top: 40rpx;
+  background-color: #64a36f;
+  color: #ffffff;
+  height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+}

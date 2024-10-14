@@ -1,28 +1,10 @@
 .pub-container {
-  padding-top: 50rpx;
-  background: #fbfae1;
-  height: 100vh;
-}
-
-textarea {
-  margin: 20px auto;
-  border: 1px solid #eaeaea;
-  width: 80%;
-  padding: 20rpx;
-  border-radius: 40rpx;
-}
-
-.context {
-  font-size: 26rpx;
-}
-
-.btn {
-  position: absolute;
-  left: calc(50% - 30px);
-}
-
-.van-button {
-  border-radius: 10rpx !important;
+  padding: 40rpx;
+  background: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .van-field__input {
@@ -30,42 +12,99 @@ textarea {
 }
 
 .van-cell {
-  background-color: #fbfae1 !important;
+  background-color: #ffffff !important;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  padding: 20rpx;
 }
 
-.van-button--primary {
-  background: #64a36f !important;
-  color: #fbfae1 !important;
-  height: 80rpx !important;
-  width: 150rpx !important;
-  border: none !important;
+.textarea-wrapper {
+  border-radius: 20rpx;
+  background-color: #fff;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  padding: 20rpx;
+  margin-top: 10rpx;
+}
+
+textarea {
+  width: 100%;
+  height: 300rpx;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+textarea::placeholder {
+  color: #aaa;
+}
+
+.choose-location-btn,
+.choose-image-btn {
+  margin: 20rpx 0;
+  text-align: center;
+}
+
+.location-btn,
+.image-btn {
+  width: 80%;
+  height: 80rpx;
+  background-color: #64a36f !important;
+  color: #fff !important;
+  border-radius: 40rpx;
+  font-size: 32rpx;
 }
 
 .image-preview {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 20rpx;
+  gap: 20rpx;
 }
 
 .image-wrapper {
   position: relative;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  width: 160rpx;
+  height: 160rpx;
 }
 
-.image-wrapper image {
-  width: 100px;
-  height: 100px;
+.preview-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
   object-fit: cover;
 }
 
 .delete-btn {
   position: absolute;
-  top: 0;
-  right: 0;
-  background: red;
+  top: -10rpx;
+  right: -10rpx;
+  background-color: #ff4d4f;
   color: white;
-  font-size: 12px;
+  font-size: 24rpx;
+  width: 40rpx;
+  height: 40rpx;
   border-radius: 50%;
-  padding: 2px;
+  line-height: 40rpx;
+  text-align: center;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.2);
+}
+
+.publish-btn {
+  margin-top: 40rpx;
+  text-align: center;
+}
+
+.van-button--primary {
+  background: #64a36f !important;
+  color: #fff !important;
+  height: 80rpx !important;
+  width: 80% !important;
+  border-radius: 40rpx !important;
+  font-size: 32rpx;
 }
