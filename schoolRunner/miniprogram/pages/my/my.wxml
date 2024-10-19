@@ -2,10 +2,10 @@
   <!-- 头像信息 -->
   <view class="info">
     <view class="avatar">
-      <image src="{{userInfo.avatarUrl}}" mode="widthFix" class="avatar-image"></image>
+      <image src="{{userInfo.avatarUrl}}" mode="widthFix" class="avatar-image" style="width: 150rpx; height: 145rpx; display: inline-block; box-sizing: border-box"></image>
     </view>
-    <view class="info_text">
-      <view>{{userInfo.nickName}}</view>
+    <view class="info_text" style="width: 150rpx; height: 83rpx; display: block; box-sizing: border-box">
+      <view style="width: 237rpx; height: 75rpx; display: block; box-sizing: border-box; position: relative; left: 12rpx; top: 8rpx">{{userInfo.nickName}}</view>
     </view>
   </view>
 

@@ -15,6 +15,7 @@
 }
 .info_text{
   margin: 70rpx 0 0 30rpx;
+  font-size: 56rpx;
 }
 .setInfo{
   color: #cac7c7;
