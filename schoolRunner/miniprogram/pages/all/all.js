@@ -145,7 +145,7 @@ Page({
   // 上拉触底时加载更多兼职信息
   onReachBottom() {
     const { page, new: currentData } = this.data;
-    const nextPage = page + 10;
+    const nextPage = page + 100;
 
     // 设置加载状态
     this.setData({
@@ -153,7 +153,7 @@ Page({
     });
 
     // 从数据库中跳过当前页数，获取新的数据
-    jobDetail.skip(nextPage).limit(10).get().then((res) => {
+    jobDetail.skip(nextPage).limit(100).get().then((res) => {
       if (res.data && res.data.length > 0) {
         let newData = res.data.map((element) => {
           return {

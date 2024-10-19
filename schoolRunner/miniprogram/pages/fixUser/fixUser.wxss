@@ -1,32 +1,73 @@
+/* 全局容器 */
 .container {
-  padding: 20rpx;
+  padding: 40rpx;
+  background-color: #f5f5f5;
 }
 
+/* 头像区域 */
 .avatar-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40rpx;
+  margin-bottom: 60rpx;
+  background-color: #ffffff;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 5rpx 15rpx rgba(0, 0, 0, 0.1);
 }
 
 .avatar {
-  width: 200rpx;
-  height: 200rpx;
-  border-radius: 100rpx;
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 50%;
   margin-bottom: 20rpx;
+  border: 4rpx solid #e5e5e5;
 }
 
+.change-avatar-btn {
+  background-color: #34c3bc;
+  color: #ffffff;
+  padding: 20rpx 40rpx;
+  border-radius: 20rpx;
+  font-size: 30rpx;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.change-avatar-btn:hover {
+  background-color: #2ba49e;
+}
+
+/* 表单区域 */
 .form-section {
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
+  padding: 30rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 5rpx 15rpx rgba(0, 0, 0, 0.1);
 }
 
+van-field {
+  margin-bottom: 30rpx;
+}
+
+/* 保存按钮 */
 .save-btn {
-  margin-top: 40rpx;
+  margin-top: 50rpx;
   background-color: #64a36f;
   color: #ffffff;
-  height: 80rpx;
-  border-radius: 40rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
   text-align: center;
-  line-height: 80rpx;
+  line-height: 90rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  box-shadow: 0 5rpx 20rpx rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.save-btn:active {
+  background-color: #51965b;
+  box-shadow: 0 3rpx 12rpx rgba(0, 0, 0, 0.12);
 }

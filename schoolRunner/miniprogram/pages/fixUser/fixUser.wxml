@@ -1,15 +1,17 @@
 <view class="container">
+  <!-- 头像区域 -->
   <view class="avatar-section">
     <image class="avatar" src="{{avatarUrl}}" mode="aspectFill"></image>
-    <button bindtap="changeAvatar">更换头像</button>
+    <button class="change-avatar-btn" bindtap="changeAvatar">更换头像</button>
   </view>
 
+  <!-- 表单区域 -->
   <view class="form-section">
     <van-field label="昵称" value="{{nickName}}" bindinput="onNickNameInput" />
-    <van-field label="性别" value="{{genderLabel}}" is-link bindtap="onGenderSelect" />
-    <van-field label="城市" value="{{city}}" is-link bindtap="onCitySelect" />
-    <van-field label="省份" value="{{province}}" is-link bindtap="onProvinceSelect" />
-    <van-field label="国家" value="{{country}}" is-link bindtap="onCountrySelect" />
+    <van-field label="性别" value="{{genderLabel}}" is-link readonly bindtap="onGenderSelect" />
+    <van-field label="城市" value="{{city}}" is-link readonly bindtap="onCitySelect" />
+    <van-field label="省份" value="{{province}}" is-link readonly bindtap="onProvinceSelect" />
+    <van-field label="国家" value="{{country}}" is-link readonly bindtap="onCountrySelect" />
 
     <button class="save-btn" bindtap="onSave">保存</button>
   </view>
@@ -53,5 +55,4 @@
       bind:confirm="onCountryConfirm"
     />
   </van-popup>
-
 </view>

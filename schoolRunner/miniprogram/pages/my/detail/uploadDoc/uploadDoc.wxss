@@ -1,126 +1,186 @@
+/* 主容器样式 */
 .main {
-  background: #fbfae1;
-  height: 100vh;
+  background: #f5f5f5;
+  padding: 20rpx;
+  min-height: 100vh;
 }
-.myJobDoc{
-  display: flex;
-  justify-content: space-between;
-  padding: 20rpx 0;
-  margin: 0 20rpx;
-  border-bottom: 1rpx solid #eaeaea;
-}
-.icon{
-  width: 50rpx;
-  height: 50rpx;
-}
-.myJobList{
+
+/* 我的简历模块 */
+.myJobDoc {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 40rpx;
-  position: relative;
-  border-bottom: 1rpx solid #eaeaea;
-  padding-bottom: 40rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 20rpx;
 }
+
+.myJobDoc-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/* 简历列表 */
+.myJobList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
 .myJobList-left-box {
   display: flex;
   align-items: center;
 }
+
 .logo {
   width: 60rpx;
-  height: 100%;
+  height: 60rpx;
 }
+
 .myJobList-left {
   display: flex;
   flex-direction: column;
+  padding-left: 20rpx;
 }
-.myJobList-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  clear: both;
-}
-.settingList {
-  font-size: 30rpx;
-  border: 1rpx solid #eaeaea;
-  padding: 20rpx;
-  box-shadow: 4rpx 4rpx 6rpx 1rpx #eaeaea;
-  position: absolute;
-  right: 20rpx;
-  width: 150rpx;
-  top: 50rpx;
-  text-align: center;
-  z-index: 2;
-  background: white;
-}
-.rename {
-  padding-bottom: 20rpx;
 
-}
-.del {
-
-}
 .myJobList-left-title {
   font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
 }
+
 .myJobList-left-date {
-  font-size: 26rpx;
+  font-size: 28rpx;
+  color: #888;
 }
+
+.myJobList-right {
+  position: relative;
+}
+
+.settingList {
+  position: absolute;
+  right: 0;
+  top: 50rpx;
+  width: 180rpx;
+  background-color: #fff;
+  border: 1rpx solid #eaeaea;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1);
+  border-radius: 10rpx;
+  z-index: 10;
+  text-align: center;
+}
+
+.rename, .del {
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.del {
+  color: #ff4d4f;
+}
+
+.rename:hover, .del:hover {
+  background-color: #f0f0f0;
+}
+
+/* 上传简历按钮 */
 .upload {
   position: fixed;
-  bottom: 0;
-  width: 100vw;
+  bottom: 40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background-color: #34c3bc;
+  color: #fff;
+  font-size: 36rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+  text-align: center;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
+
+.upload:active {
+  background-color: #2ba49e;
+}
+
+/* 弹窗遮罩 */
 .mask {
-  background: rgba(0, 0, 0, 0.8);
-  height: 100vh;
-  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
-}
-.alert {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 350rpx;
-  width: 500rpx;
-  background:#f7e7bd;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  border-radius: 20rpx;
+  align-items: center;
+  z-index: 999;
 }
-.name {
-  width: 80%;
-  margin: 20rpx auto;
-  border: 1rpx solid #d9c6a5;
-  padding: 10rpx 20rpx ;
+
+/* 弹窗内容 */
+.alert {
+  width: 600rpx;
+  background-color: #fff;
   border-radius: 20rpx;
-  color: #c26565;
-  font-size: 30rpx;
+  padding: 40rpx;
+  position: relative;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.2);
 }
+
 .alert-title {
-  color: #a35d6a;
+  font-size: 36rpx;
   text-align: center;
+  color: #333;
+  margin-bottom: 20rpx;
 }
+
+.name {
+  width: 100%;
+  padding: 20rpx;
+  border: 1rpx solid #d9c6a5;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
+
 .alert-btn {
-  background: #c26565;
-  color: #f7e7bd;
-  width: 150rpx;
+  background-color: #c26565;
+  color: #fff;
+  width: 100%;
   height: 80rpx;
-  font-size: 30rpx;
   line-height: 80rpx;
-  box-shadow: 4rpx 4rpx 4rpx 4rpx #a35d6a;
+  text-align: center;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
-.alert-title-input-placeholder {
-  font-size: 30rpx;
-  
+
+.alert-btn:active {
+  background-color: #a35d6a;
 }
+
 .close-alert {
   position: absolute;
-  right: 15rpx;
-  top: 10rpx;
+  right: 20rpx;
+  top: 20rpx;
+  font-size: 40rpx;
+  cursor: pointer;
 }

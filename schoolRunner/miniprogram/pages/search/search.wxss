@@ -1,1 +1,64 @@
-/* miniprogram/pages/search/search.wxss */
+/* 历史搜索区域 */
+.history-section {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 历史搜索标题 */
+.history-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* 历史搜索记录项布局 */
+.history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* 控制历史记录项之间的间距 */
+}
+
+/* 历史记录项样式 */
+.history-item {
+  background-color: #ffffff;
+  padding: 6px 15px;
+  border-radius: 20px;
+  margin: 5px 0;
+  font-size: 14px;
+  color: #34c3bc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  max-width: 80px; /* 控制记录项的最大宽度 */
+  text-align: center;
+  white-space: nowrap; /* 防止文字换行 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 文字溢出时显示省略号 */
+}
+
+/* 悬停效果 */
+.history-item:hover {
+  background-color: #e0f4f3;
+}
+
+/* 清除历史记录按钮 */
+.clear-history {
+  color: #ff4d4f;
+  margin-top: 15px;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #ff4d4f;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.clear-history:hover {
+  background-color: #ff4d4f;
+  color: #ffffff;
+}

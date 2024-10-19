@@ -1,31 +1,82 @@
+/* 主容器样式 */
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+}
+
+/* 职位列表样式 */
 .job-list {
-  min-height: 50rpx;
-  padding: 20rpx;
-  transition: all 1s linear;
-  border-bottom: 1rpx solid #eaeaea;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
-.job-list-doc {
-  display: grid;
-  grid-template-columns: 10% 80%;
-  justify-content: center;
-  justify-items: center;
-  padding: 20rpx;
-}
-.icon {
-  justify-self: end;
-}
-.item-right {
-  justify-self: start;
-  margin-left: 30rpx;
-}
-.title {
-  font-size: 30rpx;
-}
-.date {
-  font-size: 26rpx;
-  color: #888;
-}
+
+/* 职位标题部分 */
 .job-list-item {
-  display: grid;
-  grid-template-columns: 90% 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eaeaea;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.job-list-item .title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.expIcon {
+  display: flex;
+  align-items: center;
+}
+
+/* 图标旋转动画 */
+.expIcon .van-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 当展开时，图标旋转 180 度 */
+.expIcon .van-icon.active {
+  transform: rotate(180deg);
+}
+
+/* 展开后的职位文档列表 */
+.job-list-doc {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.item-right {
+  flex: 1;
+}
+
+.doc-title {
+  font-size: 30rpx;
+  color: #0c99c1;
+  font-weight: 500;
+}
+
+.date {
+  font-size: 24rpx;
+  color: #888;
+  margin-top: 10rpx;
+}
+
+/* 鼠标悬停效果 (仅在桌面环境下生效) */
+.job-list:hover {
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.2);
 }

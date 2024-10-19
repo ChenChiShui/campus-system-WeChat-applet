@@ -1,19 +1,37 @@
-	<!-- 输入框 -->
-  <view class="input" bindtap="search">
-	  <van-search value="{{ value }}" shape="round" background="#34c3bc" placeholder="搜索兼职" bind:change="onChange" bind:search="onSearch"/>  
+<!-- 输入框 -->
+<view class="input" bindtap="search">
+  <van-search value="{{ value }}" shape="round" background="#34c3bc" placeholder="搜索兼职" bind:change="onChange" bind:search="onSearch"/>  
+</view>
+
+<!-- 历史搜索记录 -->
+<view class="history-section" wx:if="{{searchHistory.length > 0}}">
+  <view class="history-title">历史搜索</view>
+  <view class="history-list">
+    <view 
+      wx:for="{{searchHistory}}" 
+      wx:key="*this" 
+      class="history-item" 
+      bindtap="searchFromHistory" 
+      data-term="{{item}}"
+    >
+      {{item}}
+    </view>
   </view>
-  
-  	<van-panel 
-	wx:for="{{new}}" 
-	wx:for-item="item" 
-	wx:for-index="index" 
-	wx:key="key" 
-	title="{{item.title}}" 
-	desc="{{item.date}}" 
-	status="{{item.status}}"
-	data-id="{{item._id}}"
-	data-type="{{item.type}}"
-	bindtap="detail"
-	>
-		<van-tag type="success" class="tag">{{item.tagName}}</van-tag>
-	</van-panel>
+  <view class="clear-history" bindtap="clearHistory">清除历史记录</view>
+</view>
+
+<!-- 搜索结果 -->
+<van-panel 
+  wx:for="{{new}}" 
+  wx:for-item="item" 
+  wx:for-index="index" 
+  wx:key="key" 
+  title="{{item.title}}" 
+  desc="{{item.date}}" 
+  status="{{item.status}}"
+  data-id="{{item._id}}"
+  data-type="{{item.type}}"
+  bindtap="detail"
+>
+  <van-tag type="success" class="tag">{{item.tagName}}</van-tag>
+</van-panel>
