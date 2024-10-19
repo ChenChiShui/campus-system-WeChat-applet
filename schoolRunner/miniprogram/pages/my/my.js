@@ -124,5 +124,19 @@ Page({
         console.error('用户拒绝授权:', err);
       }
     });
+  },
+
+  // 下拉刷新功能
+  onPullDownRefresh() {
+    console.log('用户正在下拉刷新页面...');
+    
+    // 重新加载用户信息
+    this.getUserInfoFromDatabase();
+
+    // 确保数据加载完成后，停止下拉刷新
+    setTimeout(() => {
+      wx.stopPullDownRefresh();  // 停止下拉刷新
+      console.log('下拉刷新已完成');
+    }, 1000);  // 可以根据数据加载的实际时间调整这个延迟
   }
 });

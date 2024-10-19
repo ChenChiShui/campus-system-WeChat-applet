@@ -2,13 +2,15 @@
   <!-- 头像信息 -->
   <view class="info">
     <view class="avatar">
-      <image src="{{userInfo.avatarUrl}}" mode="widthFix" style="height: inherit;width: inherit"></image>
+      <image src="{{userInfo.avatarUrl}}" mode="widthFix" class="avatar-image"></image>
     </view>
     <view class="info_text">
       <view>{{userInfo.nickName}}</view>
     </view>
-    <view class="line"></view>
   </view>
+
+  <!-- 分割线 -->
+  <view class="line"></view>
 
   <!-- 功能块 -->
   <view class="piece"> 

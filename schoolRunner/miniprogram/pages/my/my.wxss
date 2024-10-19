@@ -21,14 +21,14 @@
   margin-top: 30rpx;
   font-size: 26rpx;
 }
-.line{
-  height: 100rpx;
+.line {
+  height: 80rpx; /* 设置较高的高度以突出弧形 */
   background: white;
-  border-radius: 80%;
+  border-radius: 70%; /* 只在底部设置圆角，形成弧形 */
   width: 100%;
-  position: absolute;
-  top: 250rpx;
+  margin-top: -40rpx; /* 通过负的margin将线条上移，实现视觉上的紧贴 */
   overflow: hidden;
+  z-index: 1; /* 确保分割线不会被其他内容遮盖 */
 }
 .tic{
   margin: 50rpx;
