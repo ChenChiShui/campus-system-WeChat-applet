@@ -4,6 +4,7 @@
     left-icon="/images/icon/公告.png"
     text="{{notice}}"
     class="notice"
+    animation="{{noticeAnimation}}"
   />
 
   <!-- 输入框 -->
@@ -25,21 +26,22 @@
   </view>
 
   <!-- 功能列表 -->
-  <view class="listBox">
-    <van-row>
-      <van-col span="8" wx:for="{{list}}" wx:for-item="item" wx:index="index" wx:key="index" data-name="{{item.tag}}" bindtap="tagDetail">
-        <view class="list">
-          <view>
-            <van-image width="40" height="40" src="{{item.img}}" />
-          </view>
-          <text>{{item.text}}</text>
+<!-- 功能列表 -->
+<view class="listBox">
+  <van-row>
+    <van-col span="8" wx:for="{{list}}" wx:for-item="item" wx:index="index" wx:key="index" data-name="{{item.tag}}" bindtap="tagDetail">
+      <view class="list" bindtap="onImageClick" data-index="{{index}}">
+        <view class="image-container">
+          <van-image class="animated-image" width="60" height="60" src="{{item.img}}" />
         </view>
-      </van-col>
-    </van-row>
-  </view>
+        <text>{{item.text}}</text>
+      </view>
+    </van-col>
+  </van-row>
+</view>
 
   <!-- 最新分割线 -->
-  <van-divider contentPosition="center" customStyle="color: #1989fa;border-color: #eaeaea;font-size: 17px;margin:40rpx">
+  <van-divider contentPosition="center" customStyle="background: linear-gradient(to right, #34c3bc, #1989fa); color: #fff; font-size: 18rpx;">
     <van-icon name="new" />最新兼职
   </van-divider>
 
@@ -61,9 +63,4 @@
     <!-- 标签展示 -->
     <van-tag type="success" class="tag">{{item.tagName}}</van-tag>
   </van-panel>
-
-  <!-- 在线咨询按钮 -->
-  <view class="shareBox">
-    <button type="primary" open-type="contact" class="kfBtn" style="position: relative; left: 0rpx; top: -1rpx">在线咨询</button>
-  </view>
 </view>

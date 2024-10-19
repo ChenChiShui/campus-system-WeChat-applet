@@ -2,65 +2,108 @@
   position: fixed;
   width: 100%;
   z-index: 99;
+  background-color: #f7f7f7; /* 背景色 */
+  border-bottom: 1px solid #eaeaea; /* 下边框 */
+  font-size: 15px;
+  color: #333; /* 公告文字颜色 */
 }
 
 .input {
-  padding-top: 41px;
+  padding: 60rpx 20rpx;
+}
+
+.van-search {
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  border-radius: 30rpx;
+  margin-top: 20rpx; /* 增加顶部外边距，向下移动 */
 }
 
 .swiperBox {
-  width: 100%;
-  text-align: center;
+  width: 100%; /* 保持宽度为100% */
+  margin-top: 0rpx; /* 顶部外边距 */
+  padding: 10rpx 10rpx; /* 内边距，确保模块有更多的内边距空间 */
+  height: 300rpx; /* 增加整个 swiperBox 的高度 */
 }
 
 .swiper {
-  height: 175px;
+  height: 300rpx; /* 放大轮播图的高度 */
+  border-radius: 20rpx; /* 保持圆角 */
+  overflow: hidden; /* 防止内容溢出 */
 }
 
-.listImg {
-  width: 10rpx;
+.swiper-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.list {
-  margin: 25rpx 0;
-  text-align: center;
-}
-
-.fireHeader {
-  color: red;
+.swiper-item image {
+  border-radius: 12rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1); /* 图片阴影 */
 }
 
 .listBox {
-  background: linear-gradient(to right, rgb(255, 246, 224), rgb(237, 210, 141));
+  background: linear-gradient(135deg, #f6d365 0%, #eee5e3 100%); /* 渐变背景 */
   width: 95%;
-  margin: 20rpx auto;
-  border-radius: 40px;
+  margin: 30rpx auto;
+  border-radius: 20rpx;
+  padding: 20rpx 0;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1); /* 阴影 */
 }
 
-.shareBox {
-  position: fixed;
-  right: 0;
-  top: 60%;
-  z-index: 9999;
-  width: 100rpx;
+.list {
+  margin: 20rpx 0;
+  text-align: center;
+  transition: transform 0.2s ease; /* 添加交互效果 */
 }
 
-.kfBtn {
-  font-size: 14px;
+.list:hover {
+  transform: scale(1.05); /* 鼠标悬浮时放大 */
 }
 
-/* 自定义内容区域样式 */
-.custom-content {
+.list van-image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 10rpx;
+}
+
+.list text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.van-divider {
+  background: linear-gradient(to right, #34c3bc, #1989fa); /* 渐变分割线 */
+  color: #fff;
+  font-size: 18rpx;
+  border-color: transparent; /* 去掉默认边框 */
+  margin: 50rpx 0;
+}
+
+.van-divider .van-icon {
+  color: #fff; /* 图标颜色 */
+}
+
+.panel {
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.05); /* 卡片阴影 */
+  padding: 20rpx;
+}
+
+.panel .custom-content {
   display: flex;
   align-items: center;
   padding: 10rpx 0;
 }
 
 .custom-image {
-  width: 80rpx;
-  height: 80rpx;
+  width: 100rpx;
+  height: 100rpx;
   margin-right: 20rpx;
   border-radius: 8rpx;
+  object-fit: cover; /* 确保图片不会变形 */
 }
 
 .custom-info {
@@ -70,6 +113,11 @@
 
 .custom-salary {
   color: #ff4c4c;
-  font-size: 26rpx;
+  font-size: 30rpx;
   font-weight: bold;
+}
+
+.van-tag {
+  margin-top: 10rpx;
+  font-size: 22rpx;
 }
