@@ -51,7 +51,8 @@
 
     <!-- 自定义内容区域 -->
     <view slot="content" class="custom-content">
-
+      图片展示
+      <image class="custom-image" src="{{item.image}}" mode="aspectFit" />
 
       <!-- 薪资信息 -->
       <view class="custom-info">
