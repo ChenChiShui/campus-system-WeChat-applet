@@ -21,7 +21,7 @@
 
 ### 页面展示
 
-![20241021092823216](.\doc\picture.png)
+![20241021092823216](https://gitee.com/chen-chishui/h5_design/raw/master/doc/picture.png)
 
 
 
